@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOSE | KALKAJI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <button id="disableAnimationButton">Disable Animations</button>
+    <div id="cursor"></div>
+    <header class="navbar">
+      <div class="logo-container">
+        <img
+          src="https://www.edudel.nic.in/sose/static/media/sose_logo.c68cc6997a46f7174e5e.png"
+          alt="SOSE logo"
+          aria-label="SOSE logo"
+          class="logo"
+        />
+      </div>
+      <!-- Hamburger icon (mobile menu toggle) -->
+      <i
+        class="ri-menu-3-line hamburger-icon"
+        id="hamburger"
+        role="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      ></i>
+
+      <!-- Navigation menu -->
+      <nav class="nav-links" id="nav-links" role="navigation">
+        <!-- Close button for mobile menu -->
+        <i
+          class="ri-close-circle-line close-icon"
+          id="cancelButton"
+          role="button"
+          aria-label="Close navigation menu"
+        ></i>
+        <ul>
+          <li><a href="#home" aria-label="Home">Home</a></li>
+          <li><a href="#about" aria-label="About us">About us</a></li>
+          <li><a href="#academics" aria-label="Academics">Academics</a></li>
+          <li><a href="#admission" aria-label="Admission">Admission</a></li>
+          <li><a href="#contact" aria-label="Contact us">Contact us</a></li>
+        </ul>
+        <button class="cta-button" id="btns" aria-label="Get Started">
+          Get Started
+        </button>
+      </nav>
+    </header>
+
+    <!-- Marquee Section (Page 1) -->
+    <div id="move">
+      <div class="marque">
+        <h1>THRIVE BEYOND LIMITS</h1>
+        <img
+          src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+          alt="Arrow Icon"
+        />
+      </div>
+
+      <div class="marque">
+        <h1>THRIVE BEYOND LIMITS</h1>
+        <img
+          src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+          alt="Arrow Icon"
+        />
+      </div>
+
+      <div class="marque">
+        <h1>THRIVE BEYOND LIMITS</h1>
+        <img
+          src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+          alt="Arrow Icon"
+        />
+      </div>
+
+      <div class="marque">
+        <h1>THRIVE BEYOND LIMITS</h1>
+        <img
+          src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+          alt="Arrow Icon"
+        />
+      </div>
+
+      <div class="marque">
+        <h1>THRIVE BEYOND LIMITS</h1>
+        <img
+          src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+          alt="Arrow Icon"
+        />
+      </div>
+    </div>
+
+    <!-- Main Content Section (Carousel - Home) -->
+    <section class="carousel-container" id="home">
+      <!-- Left Arrow -->
+      <div class="arrow arrow-left">
+        <i class="ri-arrow-left-s-line"></i>
+      </div>
+
+      <!-- Carousel Wrapper -->
+      <div class="carousel-wrapper">
+        <div class="carousel-content">
+          <!-- Slide 1 -->
+          <div class="content-section">
+            <div class="left-content">
+              <!-- <video class="media-content" src="video1.mp4" muted loop></video> -->
+              <img
+                src="ASSETS/school-photo.png"
+                alt="Slide 1"
+                class="media-content"
+                loading="lazy"
+              />
+            </div>
+            <div class="divider-line"></div>
+            <div class="right-content">
+              <h2 class="animated-text">Welcome to SOSE | KALKAJI</h2>
+              <p class="animated-text">
+                Discover our journey of excellence in education.
+              </p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="content-section">
+            <div class="left-content">
+              <img
+                src="https://via.placeholder.com/500x300"
+                alt="Slide 2"
+                class="media-content"
+                loading="lazy"
+              />
+            </div>
+            <div class="divider-line"></div>
+            <div class="right-content">
+              <h2 class="animated-text">Our Mission</h2>
+              <p class="animated-text">
+                To provide quality education and foster holistic development.
+              </p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="content-section">
+            <div class="left-content">
+              <img
+                src="https://via.placeholder.com/500x300"
+                alt="Slide 3"
+                class="media-content"
+                loading="lazy"
+              />
+            </div>
+            <div class="divider-line"></div>
+            <div class="right-content">
+              <h2 class="animated-text">State-of-the-Art Facilities</h2>
+              <p class="animated-text">
+                Equipped with modern infrastructure to support learning.
+              </p>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="content-section">
+            <div class="left-content">
+              <img
+                src="https://via.placeholder.com/500x300"
+                alt="Slide 4"
+                class="media-content"
+                loading="lazy"
+              />
+            </div>
+            <div class="divider-line"></div>
+            <div class="right-content">
+              <h2 class="animated-text">Join Us</h2>
+              <p class="animated-text">
+                Be a part of our vibrant and dynamic community.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Arrow -->
+      <div class="arrow arrow-right">
+        <i class="ri-arrow-right-s-line"></i>
+      </div>
+    </section>
+
+    <!-- Additional Sections -->
+    <section id="about">
+      <h1>About Us</h1>
+      <p>Information about SOSE | KALKAJI.</p>
+    </section>
+
+    <section id="academics">
+      <h1>Academics</h1>
+      <p>Details about our academic programs and curriculum.</p>
+    </section>
+
+    <section id="admission">
+      <h1>Admission</h1>
+      <p>Guidelines and procedures for admissions.</p>
+    </section>
+
+    <section id="contact">
+      <h1>Contact Us</h1>
+      <p>Get in touch with SOSE | KALKAJI.</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer">
+      <p>&copy; 2024 SOSE | KALKAJI. All rights reserved.</p>
+    </footer>
+    <!-- lenis cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled.min.js"></script>
+    <!-- GSAP Animation -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

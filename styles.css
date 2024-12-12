@@ -1,0 +1,468 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Font Face */
+@font-face {
+  font-family: "China";
+  src: url("./fonts/NeueMachina-Regular.woff2") format("woff2"),
+    url("./fonts/NeueMachina-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+#disableAnimationButton {
+  position: fixed;
+  bottom: 5px;
+  cursor: pointer;
+  right: 5px;
+  z-index: 999;
+  padding: 10px;
+  background-color: #6c88e4;
+  color: white;
+  border-radius: 5px;
+  border: solid 2px transparent;
+}
+
+/* cursor */
+
+#cursor {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: #7d97f4; /* Semi-transparent for a nice effect */
+  position: absolute;
+  z-index: 9999;
+  display: block;
+}
+
+/* Navbar */
+.navbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  z-index: 100;
+}
+
+.logo {
+  height: 60px;
+}
+
+/* Hamburger Icon */
+.hamburger-icon {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Close Icon */
+.close-icon {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  margin-right: 20px;
+}
+
+.nav-links ul li {
+  margin: 0 15px;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover,
+.nav-links ul li a:focus {
+  color: rgb(108, 136, 228);
+}
+
+.cta-button {
+  padding: 12px 20px;
+  color: white;
+  background-color: rgb(213, 106, 107);
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  background-color: rgb(108, 136, 228);
+  transform: translateY(-2px);
+}
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 80vh;
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+  display: flex;
+  transition: transform 1s ease;
+  width: 100%;
+}
+
+/* Carousel Content */
+.carousel-content {
+  display: flex;
+  width: 100%;
+}
+
+/* Content Section */
+.content-section {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 50px;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+.left-content {
+  flex: 1;
+}
+
+.media-content {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.media-content:hover {
+  transform: scale(1.1);
+  z-index: 1; /* Bring media to front */
+}
+
+.divider-line {
+  width: 2px;
+  background-color: #333;
+  height: 80%;
+  margin: 0 30px;
+}
+
+.right-content {
+  flex: 1;
+}
+
+.right-content h2,
+.right-content p {
+  margin-bottom: 20px;
+  font-size: 20px;
+  opacity: 0; /* Initially hidden for animation */
+  transform: translateY(50px); /* Initially moved down for animation */
+}
+
+/* Animated Text */
+.animated-text {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Arrow Styles */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 200; /* Higher than the carousel content */
+  background-color: rgba(255, 255, 255, 0.8); /* Ensure visibility */
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.arrow-left {
+  left: 20px;
+}
+
+.arrow-right {
+  right: 20px;
+}
+
+.arrow i {
+  font-size: 30px;
+}
+
+/* Hide Arrows on Smaller Screens */
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 15px;
+  }
+
+  #cursor {
+    display: none;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease-in-out;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .nav-links ul li {
+    margin: 15px 0;
+  }
+
+  .cta-button {
+    margin-top: 20px;
+    padding: 10px 18px;
+  }
+
+  .hamburger-icon,
+  .close-icon {
+    display: block;
+  }
+
+  .content-section {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .divider-line {
+    width: 80%;
+    height: 2px;
+    margin: 0;
+  }
+
+  .carousel-wrapper {
+    flex-direction: column;
+  }
+}
+
+/* Marquee Section */
+
+/* Marquee Section */
+
+#move {
+  background-color: rgb(213, 106, 107);
+  display: flex;
+  padding: 2vh 0; /* Reduced padding for better fit */
+  overflow: hidden;
+  width: 100%;
+  align-items: center; /* Center vertically */
+}
+
+.marque {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 3vw;
+  padding: 0 1.5vw;
+}
+
+.marque h1 {
+  font-size: 2.5vw; /* Adjusted font size for better fit */
+  font-family: "China", sans-serif;
+  color: #fff; /* Ensure text is visible against background */
+}
+
+.marque img {
+  height: 2.5vw; /* Adjusted height to match text */
+}
+
+/* Responsive Marquee */
+@media (max-width: 768px) {
+  .marque h1 {
+    font-size: 4vw;
+  }
+
+  .marque img {
+    height: 4vw;
+  }
+}
+
+/* Responsive Marquee */
+@media (max-width: 768px) {
+  .marque h1 {
+    font-size: 4vw;
+  }
+
+  .marque img {
+    height: 4vw;
+  }
+}
+
+/* Accessibility Focus Styles */
+a:focus,
+button:focus,
+i:focus {
+  outline: 2px dashed #333;
+  outline-offset: 4px;
+}
+
+/* Additional Sections Styling */
+
+/* About Us Section */
+#about {
+  height: 100vh;
+  background-color: #e0f7fa; /* Light Cyan */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#about h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 1.2rem;
+  max-width: 800px;
+}
+
+/* Academics Section */
+#academics {
+  height: 100vh;
+  background-color: #ffecb3; /* Light Amber */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#academics h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#academics p {
+  font-size: 1.2rem;
+  max-width: 800px;
+}
+
+/* Admission Section */
+#admission {
+  height: 100vh;
+  background-color: #c8e6c9; /* Light Green */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#admission h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#admission p {
+  font-size: 1.2rem;
+  max-width: 800px;
+}
+
+/* Contact Us Section */
+#contact {
+  height: 100vh;
+  background-color: #d1c4e9; /* Light Purple */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#contact h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#contact p {
+  font-size: 1.2rem;
+  max-width: 800px;
+}
+
+/* Footer Section */
+#footer {
+  height: 100px;
+  background-color: #424242; /* Dark Gray */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
